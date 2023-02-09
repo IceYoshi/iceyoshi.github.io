@@ -1,0 +1,297 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+h2 {
+  padding: 0px;
+  margin: 0px;
+  white-space: nowrap;
+}
+
+/* Style the footer */
+footer {
+  background-color: red;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: 70px;
+  bottom: 0px;
+}
+
+.button {
+  background-color: red;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+.imgServices {
+	width: 100%;
+	height: 100%;
+	border-style: solid;
+	border-color: white;
+	border-width: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	object-fit: cover;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+ul, li {
+	list-style-type: none;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.l-left {
+	float: left;
+}
+.l-right {
+	float: right;
+}
+.end {
+	margin-top: 30px;
+	font-size: 3em;
+	font-weight: bold;
+	opacity: 0;
+	-webkit-transform: translateY(300px);
+	        transform: translateY(300px);
+	transition: opacity, -webkit-transform 1s;
+	transition: opacity, transform 1s;
+	transition: opacity, transform 1s, -webkit-transform 1s;
+	transition-delay: 1s;
+}
+.header-top {
+	background: white;
+	height: 70px;
+	padding: 0 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	min-width: 300px;
+	z-index: 12;
+	box-sizing: border-box;
+}
+h1 {
+	line-height: 70px;
+	height: 70px;
+	
+}
+h1 a {
+	color: red;
+	padding: 0 10px;
+	font-family: "arial black";
+	font-size: 35px;
+}
+.first-letter {
+	color: red;
+	padding: 0px;
+	font-family: "arial black";
+	font-size: 45px;
+}
+.toggle-menu {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	position: relative;
+	top: 10px;
+}
+.toggle-menu i {
+	position: absolute;
+	display: block;
+	height: 2px;
+	background: red;
+	width: 30px;
+	left: 10px;
+	transition: all .3s;
+}
+.toggle-menu i:nth-child(1) {
+	top: 16px;
+}
+.toggle-menu i:nth-child(2) {
+	top: 24px;
+}
+.toggle-menu i:nth-child(3) {
+	top: 32px;
+}
+.open-menu i:nth-child(1) {
+	top: 25px;
+	-webkit-transform: rotateZ(45deg);
+	        transform: rotateZ(45deg);
+}
+.open-menu i:nth-child(2) {
+	background: transparent;
+}
+.open-menu i:nth-child(3) {
+	top: 25px;
+	-webkit-transform: rotateZ(-45deg);
+	        transform: rotateZ(-45deg);
+}
+nav {
+ 	height: 0;
+	opacity: 0;
+  box-sizing: border-box;
+	background: rgba(0, 47, 77, .25);
+	position: fixed;
+	top: 70px;
+	width: 100%;
+  transition: all 1s;
+  overflow: hidden;
+}
+.open-menu ~ nav {
+	opacity: 1;
+ 	padding: 80px 0;
+	z-index: 15;
+	height: calc(90vh - 70px);
+}
+nav ul {
+	padding: 0 10px;
+	display: flex;
+}
+nav li {
+	flex: 1;
+}
+nav li a {
+	font-size: 2em;
+	display: block;
+	padding: 30px;
+	text-align: center;
+	transition: background .3s;
+}
+nav li a {
+	background: #ff4b4b;
+	margin-left: 20px;
+}
+nav li a:hover {
+	background: #ADD8E6;
+}
+
+/*These 3 sections add the drop dwon menus in the headers*/
+
+ul li ul.services-dropdown{ 
+    display: none;
+    z-index: 999;
+	width: 100%;
+}
+
+ul li:hover ul.services-dropdown{
+    display: inline-block;	/* Display the dropdown */
+	 }
+	 
+ul li ul.services-dropdown li{
+    display: block;
+ }
+
+section { 
+	text-align: center;
+}
+h2 {
+	font-size: 13px;
+	
+}
+
+h2 a{
+	padding: 8 8 8 8px;
+	float: left;
+	color: white;
+	background-color: red;
+	font-family: 'Open Sans';
+	font-weight: bold;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 60px;
+	color: white;
+}
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span {
+	background: white;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+}
+#fp-nav ul li a.active span, 
+.fp-slidesNav ul li a.active span, 
+#fp-nav ul li:hover a.active span, 
+.fp-slidesNav ul li:hover a.active span {
+	width: 16px;
+	height: 16px;
+	margin: -8px 0 0 -8px;
+	background: transparent;
+	box-sizing: border-box;
+	border: 2px solid #212121;
+}
+
+@media (max-width: 700px) {
+
+  .edit-name{
+	display: none;
+  }
+  
+}
+
+/*Removes the tel and email when window is narrow */
+
+@media (max-width: 1230px) {
+
+  .narrow-hide{
+	display: none;
+	
+  }
+  
+}
+
+/*Edits the nav bar when window is narrow */
+ 
+@media screen and (max-width: 767px) {
+	nav ul {
+		flex-direction: column;
+	}
+ 
+	nav li {
+		margin-top: 1px;
+	}
+  
+  nav li a {
+    font-size: 1.5em;
+  }
+  
+  .scroll-icon {
+    display: none;
+
+  }
+}
+ 
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .open-menu ~ nav {
+		padding: 20px 0;
+	}
+ 
+	nav li a {
+		padding: 3px;
+	}
+}
