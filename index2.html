@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>FM solfège - cellules rythmiques</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.6.3.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="hamburger-icon">
+            <label for="checkbox-menu"></label>
+        </div>
+
+        <div class="header-top clearfix">
+          <a class="l-right toggle-menu" href="#">
+            <i></i>
+            <i></i>
+            <i></i>
+          </a>
+        </div>
+       
+        <nav class="hide">
+          <ul id="menu">
+            <li>
+                <a href="index.html">1 bar per line</a>
+            </li>
+            <li>
+                <a href="index2.html">2 bar per line</a>
+            </li>
+            <li>
+                <a href="index3.html">3 bar per line</a>
+            </li>
+            <li>
+                <a href="index4.html">4 bar per line</a>
+            </li>                          
+          </ul>
+        </nav>
+      </header>
+
+
+    <section>
+        <article>
+            <div id="images"></div>
+        </article>
+    </section>
+
+    <footer>
+        <a class="button" href="#" onClick="window.location.reload()">
+            <p>Mike Pereira & Pit Heyart | 2023 | Click to refresh</p>
+        </a>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            var $header_top = $('.header-top');
+            var $nav = $('nav');
+            
+            $header_top.find('a').on('click', function() {
+            $(this).parent().toggleClass('open-menu');
+            });
+
+            var imageDiv = document.getElementById("images");
+            var numbers = Array.from(new Array(96), (x, i) => i + 1);
+            shuffleArray(numbers);
+            //console.log(numbers);
+            numbers.forEach(i => {
+                imageDiv.innerHTML += `<img style="width: 50%;" src=\"images/rythm (${i}).png\" onclick="playAudio('tracks/${i}.mp3')" />`;
+            });
+        });
+        
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+
+    </script>
+
+</body>
+
+
+</html>
